@@ -26,9 +26,9 @@ def get_source_names(type_of_news):
 
         if source_names_json['sources']:
             successfully_collected_list =source_names_json
-            processed_list= process_sources(successfully_collected_list)
+            list_of_sources= process_sources(successfully_collected_list)
     
-    return processed_list
+    return list_of_sources
 
 def process_sources(source_response):
     '''
