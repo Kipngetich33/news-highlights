@@ -1,12 +1,12 @@
-class News_Highlight:
+class News_Highlights:
     '''
     This is class that will determine the behaviour of the news clas
     '''
-    def __init__(self,source_names):
+    def __init__(self,source_name):
         '''
         function instantiates the class sources 
         '''
-        self.source_names = source_names
+        self.source_name = source_name
          
         
 
