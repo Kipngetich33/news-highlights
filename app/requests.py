@@ -30,7 +30,22 @@ def get_source_names(type_of_news):
     
     return processed_list
 
-def process_sources():
+def process_sources(source_response):
+    '''
+    A function that process json file results and defines them for the class
+    '''
+    populated_source_list =[]
+    for source in source_response:
+        source_name = source_response.get('name')
+        source_object= News_Highlights(source_name)
+        populated_source_list.append(source_object)
+
+    return populated_source_list
+
+
+
+
+
     
 
 
