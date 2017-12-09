@@ -11,12 +11,15 @@ class News_Highlights:
         self.source_url = source_url
         self.source_description = source_description
 
-         
-        
-
-    # def display_news(self):
-    #     '''
-    #     This function will display soureces in the index page
-    #     '''
-
+class News_Highlights_by_source:
+    '''
+    This class instatitate highlight objects for each specific source
+    '''
+    def __intit__ (self,article_name, article_description,article_time):
+        '''
+        Class that instantiates objects of the news article objects of the news sources
+        '''
+        self.article_name = article_name
+        self.article_description = article_description
+        self.article_time = article_time
 

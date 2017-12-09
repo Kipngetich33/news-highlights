@@ -1,25 +1,15 @@
 {% extends 'base.html' %}
-  <!-- <head>
-    <meta charset="utf-8">
-    <title>News</title>
-  </head> -->
-  {% block content %}
-    <h1>News Of the Hour</h1>
+{% import 'macros.html' as macro %}
 
-    <h2>News Channels</h2>
+{% block content %}
+  <h1>News Of the Hour</h1>
 
-   <!-- <h3>{{sources_and_name}}</h3>  -->
+  <h2>News Channels</h2>
 
-    <ul>
-      {% for source in sources_and_name %}
-      <hr>
-        <li>
-          <h3>{{ source.source_name}}<h3>
-          <h4>{{ source.source_id}}</h4>
-          <h4>{{ source.source_url}}</h4>
-          <p>{{ source.source_description}}</p>
-        </li>
-      {% endfor %}
-    </ul>
-    
-  {% endblock%}
+  <!-- <h3>{{sources_and_name}}</h3>  -->
+
+  <ul>
+    {{macro.macro_highlights(sources_and_name)}}
+  </ul>
+
+{% endblock%}

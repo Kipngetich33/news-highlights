@@ -1,5 +1,5 @@
 import urllib.request, json
-from .models import News_Highlights
+from .models import News_Highlights, News_Highlights_by_source
 
 #this part collects the API key
 api_key = None
@@ -29,6 +29,24 @@ def get_source_names(search_keyword):
     
     return list_of_sources
 
+def get_articles(source):
+    '''
+    This is a function that retrives articles from a particular source based on the selected source
+    '''
+    configured_articles_url = 'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=44b40f34d60a4884aff4338f6e05a4d3'
+    with urllib.request.urlopen(configured_articles_url) as url:
+        collected_articles_data = url.read()
+        source_articles_json = json.loads(collected_articles_data)
+
+        list_of_sources = None
+
+        if source_articles_json['articles']:
+            successfully_collected_articles =source_articles_json['articles']
+            list_of_articles= process_articles(successfully_collected_articles)
+    
+    return list_of_articles
+
+
 def process_sources(source_response):
     '''
     A function that process json file results and defines them for the class
@@ -43,6 +61,20 @@ def process_sources(source_response):
         populated_source_list.append(source_object)
 
     return populated_source_list
+
+def process_articles(articles_response):
+    '''
+    function that processes the json files of articles from the api key
+    '''
+    populated_articles_list = []
+    for article in articles_response:
+        article_name = article.get('author')
+        article_description = article.get('description')
+        article_time = article.get('time')
+        article_objects = News_Highlights_by_source(article_name,article_description,article_time)
+        populated_articles_list.append(article_objects)
+    return populated_articles_list 
+
 
 
 
