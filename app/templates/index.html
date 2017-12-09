@@ -1,4 +1,3 @@
-
   <head>
     <meta charset="utf-8">
     <title>News</title>
@@ -8,10 +7,12 @@
 
     <h2>Name of Source</h2>
 
+   <!-- <h3>{{sources_and_name}}</h3>  -->
+
     <ul>
       {% for source in sources_and_name %}
         <li>
-          {{ source.name}}
+          {{ source.source_name}}
         </li>
       {% endfor %}
     </ul>

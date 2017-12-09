@@ -25,7 +25,7 @@ def get_source_names(type_of_news):
         list_of_sources = None
 
         if source_names_json['sources']:
-            successfully_collected_list =source_names_json
+            successfully_collected_list =source_names_json['sources']
             list_of_sources= process_sources(successfully_collected_list)
     
     return list_of_sources
@@ -36,7 +36,7 @@ def process_sources(source_response):
     '''
     populated_source_list =[]
     for source in source_response:
-        source_name = source_response.get('name')
+        source_name = source.get('name')
         source_object= News_Highlights(source_name)
         populated_source_list.append(source_object)
 
