@@ -6,7 +6,7 @@ class Config:
     '''
 
     NEWS_API_KEY = '44b40f34d60a4884aff4338f6e05a4d3'
-    NEWS_API_BASE_URL = 'https://newsapi.org/v2/sources/{}?apiKey{}'
+    NEWS_API_BASE_URL = 'https://newsapi.org/v1/sources'
 
 class ProdConfig(Config):
     '''

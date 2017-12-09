@@ -11,14 +11,13 @@ def config_func(app):
     base_url = app.config['NEWS_API_BASE_URL']
     api_key =app.config['NEWS_API_KEY']
 
-def get_source_names(type_of_news):
+def get_source_names(search_keyword):
     '''
     This is a function that collects the news sources from the API
     '''
-    configured_source_url = 'https://newsapi.org/v2/sources?apiKey=44b40f34d60a4884aff4338f6e05a4d3'
-    # base_url.format(type_of_news,api_key)
+    configured_source_url1 = base_url.format(search_keyword,api_key)
 
-    with urllib.request.urlopen(configured_source_url) as url:
+    with urllib.request.urlopen(configured_source_url1) as url:
         collected_sources_data = url.read()
         source_names_json = json.loads(collected_sources_data)
 
@@ -37,7 +36,10 @@ def process_sources(source_response):
     populated_source_list =[]
     for source in source_response:
         source_name = source.get('name')
-        source_object= News_Highlights(source_name)
+        source_id = source.get('id')
+        source_url = source.get('url')
+        source_description = source.get('description')
+        source_object= News_Highlights(source_name,source_id,source_url,source_description)
         populated_source_list.append(source_object)
 
     return populated_source_list
