@@ -12,4 +12,4 @@ def index():
     #this part gets the different sources
 
     sources_and_name = get_source_names('sources')
-    return render_template('index.html' title= title ,sources_and_name = sources_and_name)
+    return render_template('index.html', title= title ,sources_and_name = sources_and_name)

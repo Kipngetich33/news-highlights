@@ -1,0 +1,18 @@
+
+  <head>
+    <meta charset="utf-8">
+    <title>News</title>
+  </head>
+  <body>
+    <h1>News Of the Hour</h1>
+
+    <h2>Name of Source</h2>
+
+    <ul>
+      {% for source in sources_and_name %}
+        <li>
+          {{ source.name}}
+        </li>
+      {% endfor %}
+    </ul>
+  </body>
