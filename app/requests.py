@@ -29,7 +29,7 @@ def get_source_names(search_keyword):
     
     return list_of_sources
 
-def get_articles(articles):
+def get_articles(id):
     '''
     This is a function that retrives articles from a particular source based on the selected source
     '''
