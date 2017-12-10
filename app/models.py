@@ -15,11 +15,13 @@ class News_Highlights_by_source:
     '''
     This class instatitate highlight objects for each specific source
     '''
-    def __init__(self,article_name,article_description,article_time):
+    def __init__(self,article_name,article_description,article_time,article_url,article_image):
         '''
         Class that instantiates objects of the news article objects of the news sources
         '''
         self.article_name = article_name
         self.article_description = article_description
         self.article_time = article_time
+        self.article_url = article_url
+        self.article_image = article_image
 

@@ -15,13 +15,37 @@
 
 {% endmacro %}
 
+<!-- this is the second part -->
+{% macro macro_highlights1(sources_and_name)%}
+
+    {% for source in sources_and_name %}
+    <hr>
+    <li>
+            <a href='/news_page/{{source.source_id}}'>
+                {{ source.source_id }}   
+            </a>
+        <h3>{{ source.source_name}}<h3>
+        <h4>{{ source.source_id}}</h4>
+        <h4>{{ source.source_url}}</h4>
+        <p>{{source.source_description}}</p> 
+    </li>
+    {% endfor %}
+
+{% endmacro %}
+
+<!-- this part covers the articles section -->
+
 {% macro display_articles_from_source(source_and_articles) %}
     {% for article in source_and_articles %}
     <hr>
     <li>
-        <h3>{{ article.article_name}}<h3>
+        <a href="{{article.article_image}}">
+            <h3>{{ article.article_name}}<h3>
+        </a> 
         <h4>{{ article.article_time}}</h4>
         <p>{{article.article_description}}</p> 
+        <img src="{{article.article_url}}">
     </li>
     {% endfor %}
 {% endmacro %}
+

@@ -2,13 +2,16 @@
 {% import 'macros.html' as macro %}
 
 {% block content %}
+<div class="container">
   <h1>News Of the Hour</h1>
-
+  
   <h2>News Channels</h2>
-
-  <ul>
-    {{macro.macro_highlights(sources_and_name)}}
-  </ul>
+  <hr>
+      <ul>
+        {{macro.macro_highlights(sources_and_name)}}
+      </ul>
+</div>
+  
 
 {% endblock%}
 

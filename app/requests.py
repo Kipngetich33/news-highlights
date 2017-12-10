@@ -71,7 +71,9 @@ def process_articles(articles_response):
         article_name = article.get('author')
         article_description = article.get('description')
         article_time = article.get('publishedAt')
-        article_objects = News_Highlights_by_source(article_name,article_description,article_time)
+        article_image = article.get('urlToImage')
+        article_url = article.get('url') 
+        article_objects = News_Highlights_by_source(article_name,article_description,article_time,article_image,article_url)
         populated_articles_list.append(article_objects)
 
     return populated_articles_list 
