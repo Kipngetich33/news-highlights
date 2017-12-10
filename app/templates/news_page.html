@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        {% for article in source_and_articles %}
+        <hr>
+            <li>
+                <h3>{{ article.author}}<h3>
+                <h4>{{ article.time}}</h4>
+                <p>{{article.description}}</p>
+            </li>
+        {% endfor %}
+    </body>
+</html>
