@@ -70,7 +70,7 @@ def process_articles(articles_response):
     for article in articles_response:
         article_name = article.get('author')
         article_description = article.get('description')
-        article_time = article.get('time')
+        article_time = article.get('publishedAt')
         article_objects = News_Highlights_by_source(article_name,article_description,article_time)
         populated_articles_list.append(article_objects)
 
