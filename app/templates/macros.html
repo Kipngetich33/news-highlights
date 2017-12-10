@@ -13,12 +13,12 @@
 {% endmacro %}
 
 {% macro display_articles_from_source(source_and_articles) %}
-    {% for article in list_of_articles %}
+    {% for article in source_and_articles %}
     <hr>
     <li>
         <h3>{{ article.article_name}}<h3>
         <h4>{{ article.article_time}}</h4>
         <p>{{article.article_description}}</p> 
     </li>
-    {% endfor}
-{% endfor %}
+    {% endfor %}
+{% endmacro %}

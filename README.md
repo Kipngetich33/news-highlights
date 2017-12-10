@@ -16,9 +16,7 @@
 
 #### User Stories
 
-* To create an account with details - log in and password
-* Generate a password for a new credential
-* Store existing login credentials
+* 
 
 ## Prerequisites
 * Python3.6

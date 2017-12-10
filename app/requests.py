@@ -29,7 +29,7 @@ def get_source_names(search_keyword):
     
     return list_of_sources
 
-def get_articles(source):
+def get_articles(articles):
     '''
     This is a function that retrives articles from a particular source based on the selected source
     '''
@@ -44,7 +44,7 @@ def get_articles(source):
             successfully_collected_articles =source_articles_json['articles']
             list_of_articles= process_articles(successfully_collected_articles)
     
-    return list_of_articles
+    return list_of_articles  
 
 
 def process_sources(source_response):
@@ -73,6 +73,7 @@ def process_articles(articles_response):
         article_time = article.get('time')
         article_objects = News_Highlights_by_source(article_name,article_description,article_time)
         populated_articles_list.append(article_objects)
+
     return populated_articles_list 
 
 
