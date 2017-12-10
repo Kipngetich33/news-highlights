@@ -1,15 +1,15 @@
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        {% for article in source_and_articles %}
-        <hr>
-            <li>
-                <h3>{{ article.author}}<h3>
-                <h4>{{ article.time}}</h4>
-                <p>{{article.description}}</p>
-            </li>
-        {% endfor %}
-    </body>
-</html>
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{% block content %}
+  <h1>News Of the Hour</h1>
+
+  <h2>Channel News</h2>
+
+  <!-- <h3>{{sources_and_name}}</h3>  -->
+
+  <ul>
+    {{macro.display_articles_from_source(list_of_articles)}}
+  </ul>
+
+{% endblock%}

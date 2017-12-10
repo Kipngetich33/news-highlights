@@ -2,12 +2,23 @@
 
     {% for source in sources_and_name %}
     <hr>
-        <li>
-            <h3>{{ source.source_name}}<h3>
-            <h4>{{ source.source_id}}</h4>
-            <h4>{{ source.source_url}}</h4>
-            <p>{{source.source_description}}</p> 
-        </li>
+    <li>
+        <h3>{{ source.source_name}}<h3>
+        <h4>{{ source.source_id}}</h4>
+        <h4>{{ source.source_url}}</h4>
+        <p>{{source.source_description}}</p> 
+    </li>
     {% endfor %}
 
 {% endmacro %}
+
+{% macro display_articles_from_source(source_and_articles) %}
+    {% for article in list_of_articles %}
+    <hr>
+    <li>
+        <h3>{{ article.article_name}}<h3>
+        <h4>{{ article.article_time}}</h4>
+        <p>{{article.article_description}}</p> 
+    </li>
+    {% endfor}
+{% endfor %}
