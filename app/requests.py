@@ -33,7 +33,7 @@ def get_articles(id):
     '''
     This is a function that retrives articles from a particular source based on the selected source
     '''
-    configured_articles_url = 'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=44b40f34d60a4884aff4338f6e05a4d3'
+    configured_articles_url = 'https://newsapi.org/v1/articles?source={}&apiKey={}'.format(id,api_key)
     with urllib.request.urlopen(configured_articles_url) as url:
         collected_articles_data = url.read()
         source_articles_json = json.loads(collected_articles_data)
