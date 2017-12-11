@@ -16,7 +16,6 @@
 
 #### User Stories
 
-* 
 * Users can see various news sources and select the ones they prefer
 * Users can see all the news articles from that news source
 * The user can see the image description and time the news article was created.

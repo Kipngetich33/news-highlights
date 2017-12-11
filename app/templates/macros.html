@@ -1,16 +1,19 @@
 {% macro macro_highlights(sources_and_name)%}
 
     {% for source in sources_and_name %}
-    <hr>
-    <li>
-            <a href='/news_page/{{source.source_id}}'>
-                {{ source.source_id }}   
-            </a>
-        <h3>{{ source.source_name}}<h3>
-        <h4>{{ source.source_id}}</h4>
-        <h4>{{ source.source_url}}</h4>
-        <p>{{source.source_description}}</p> 
-    </li>
+    <div class="col-md-6">
+        <hr>
+        <li>
+                <a href='/news_page/{{source.source_id}}'>
+                    {{ source.source_id }}   
+                </a>
+            <h3>{{ source.source_name}}<h3>
+            <h4>{{ source.source_id}}</h4>
+            <h4>{{ source.source_url}}</h4>
+            <p>{{source.source_description}}</p> 
+        </li>
+    </div>
+   
     {% endfor %}
 
 {% endmacro %}
