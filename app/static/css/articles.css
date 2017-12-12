@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+    color: blue;
+    font-family: 'Lobster', cursive;
+}
+h2{
+    text-align: center;
+}
+img{
+    height: 300px;
+    width: 300px;
+    float: left;
+    align:middle;
+}
+#article_title{
+    font-weight: bolder;
+    color:blue;
+}
+p{
+    text-align:  center;
+}
