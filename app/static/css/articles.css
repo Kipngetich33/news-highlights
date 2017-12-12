@@ -1,4 +1,4 @@
-/* h1{
+h1{
     text-align: center;
     color: blue;
     font-family: 'Lobster', cursive;
@@ -6,10 +6,13 @@
 h2{
     text-align: center;
 }   
+h3{
+    color:blue;
+}
 #article_title{
     font-weight: bolder;
     color:blue;
 }
 p{
     text-align:  center;
-} */
+}
